@@ -1,14 +1,32 @@
 import React, { Component } from 'react';
 //import '../styles/lexus/App.css';
-
+class TextBox extends Component {
+    render() {
+        return (
+            <div>
+                <input type="text" value={this.props.text} onChange={this.props.handleChange} name="text"/>
+                <br/>
+                <br/>
+            </div>
+        );
+    }
+}
+class RadioButton extends Component {
+    render() {
+        return (
+        <div>
+            <input type="radio" value={this.props.uppercase} onChange={this.props.handleChange} name="transform"/>{this.props.uppercase}
+            <input type="radio" value={this.props.lowercase} onChange={this.props.handleChange} name="transform"/>{this.props.lowercase}
+        </div>
+        );
+    }
+}
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             transform: 'none',
             text: this.props.text,
-            prefix: '<h2>',
-            suffix: '</h2>',
             file: 'header.html',
             para: {
                 one: 'To get started, edit',
@@ -37,15 +55,8 @@ class App extends Component {
                 <p className="App-intro">
                     {this.state.para.one} <code>{this.state.file}</code> {this.state.para.two}.
                 </p>
-                <div>
-                    <input type="text" value={this.state.text} onChange={this.handleChange} name="text"/>
-                    <br/>
-                    <br/>
-                </div>
-                <div>
-                    <input type="radio" value={this.state.uppercase} onChange={this.handleChange} name="transform"/>{this.state.uppercase}
-                    <input type="radio" value={this.state.lowercase} onChange={this.handleChange} name="transform"/>{this.state.lowercase}
-                </div>
+                <TextBox text={this.state.text} handleChange={this.handleChange}/>
+                <RadioButton uppercase={this.state.uppercase} lowercase={this.state.lowercase} handleChange={this.handleChange}></RadioButton>
             </div>
         );
     }
