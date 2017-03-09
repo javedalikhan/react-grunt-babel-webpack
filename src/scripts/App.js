@@ -56,7 +56,7 @@ class App extends Component {
                     {this.state.para.one} <code>{this.state.file}</code> {this.state.para.two}.
                 </p>
                 <TextBox text={this.state.text} handleChange={this.handleChange}/>
-                <RadioButton uppercase={this.state.uppercase} lowercase={this.state.lowercase} handleChange={this.handleChange}></RadioButton>
+                <RadioButton uppercase={this.state.uppercase} lowercase={this.state.lowercase} handleChange={this.handleChange}/>
             </div>
         );
     }
