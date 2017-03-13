@@ -48,15 +48,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= config.app %>/styles/toyota',
+                        cwd: '<%= config.app %>/styles',
                         src: ['*.scss'],
-                        dest: '.tmp/styles/toyota',
-                        ext: '.css'
-                    }, {
-                        expand: true,
-                        cwd: '<%= config.app %>/styles/lexus',
-                        src: ['*.scss'],
-                        dest: '.tmp/styles/lexus',
+                        dest: '.tmp/styles',
                         ext: '.css'
                     }
                 ]
@@ -71,15 +65,9 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.dist %>//styles/toyota',
+                    cwd: '<%= config.dist %>//styles',
                     src: ['*.css'],
-                    dest: '<%= config.dist%>/styles/toyota',
-                    ext: '.css'
-                },{
-                    expand: true,
-                    cwd: '<%= config.dist %>//styles/lexus',
-                    src: ['*.css'],
-                    dest: '<%= config.dist%>/styles/lexus',
+                    dest: '<%= config.dist%>/styles',
                     ext: '.css'
                 }]
             }
